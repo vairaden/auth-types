@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "ESNext"
+    ],
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "module": "Node16",
+    "removeComments": true,
+    "target": "ES2018",
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "moduleResolution": "Node16",
+    "paths": {},
+    "sourceMap": true,
+    "sourceRoot": "/",
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": [
+    "node_modules/**/*"
+  ]
+}
