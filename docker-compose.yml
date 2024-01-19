@@ -1,0 +1,28 @@
+version: "3"
+
+networks:
+  mynetwork:
+    driver: bridge
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: npm run start-container
+    networks:
+      - mynetwork
+    ports:
+      - "3000:3000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    command: npm run start-container
+    ports:
+      - "4173:4173"
+    networks:
+      - mynetwork
+    depends_on:
+      - backend

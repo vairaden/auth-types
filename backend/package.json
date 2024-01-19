@@ -9,6 +9,8 @@
     "build": "pnpm run empty-out-dir && tsc",
     "preview": "node dist/index.js",
     "start": "pnpm run build && pnpm run preview",
+    "build-container": "npm run empty-out-dir && tsc",
+    "start-container": "npm run build-container && npm run preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +21,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@fastify/cors": "^8.5.0",
     "fastify": "^4.25.2"
   }
 }

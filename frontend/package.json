@@ -7,9 +7,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "pnpm run build && pnpm run preview",
+    "start-container": "npm run build && npm run preview -- --host"
   },
   "dependencies": {
+    "@vkontakte/vkui": "^6.0.0",
+    "axios": "^1.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

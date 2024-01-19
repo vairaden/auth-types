@@ -1,16 +1,20 @@
 import Fastify from 'fastify'
+import cors from '@fastify/cors'
 const fastify = Fastify({
   logger: true
 })
 
-// Declare a route
-fastify.get('/', async function handler () {
+await fastify.register(cors, {
+  origin: [/localhost:4173/],
+  credentials: true,
+})
+
+fastify.get('/api', async function handler () {
   return { hello: 'world' }
 })
 
-// Run the server!
 try {
-  await fastify.listen({ port: 3000 })
+  await fastify.listen({ port: 3000, host: '0.0.0.0' })
 } catch (err) {
   fastify.log.error(err)
   process.exit(1)
